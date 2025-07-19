@@ -21,3 +21,31 @@ body {
     @apply w-[80%] h-fit p-2 bg-gray-700 text-white flex justify-between;
   }
 }
+
+.custom-shape-divider-bottom-1752948060 {
+    position: absolute;
+    bottom: 0;
+    left: 210px;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1752948060 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-bottom-1752948060 .shape-fill {
+    fill: #302929;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+    .custom-shape-divider-bottom-1752948060 svg {
+        width: calc(158% + 1.3px);
+        height: 150px;
+    }
+}
