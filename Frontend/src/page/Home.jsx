@@ -14,6 +14,15 @@ export const Home = () => {
 
   const [state, dispatch] = useReducer(reducer, initail);
 
+  function reducer(state, action) {
+    if (action.type === "inc") {
+      return {
+        initail: state.initail + 500;
+      }
+    }
+    setInitail(initail - 250);
+  }
+
   return (
     <>
       <div className="mt-10 flex justify-center">
