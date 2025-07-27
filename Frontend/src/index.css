@@ -18,12 +18,13 @@ body {
 
 @theme {
   --color-primary: #fff;
-  --color-primary-dark: #2b323f;
+  --color-accent: #efede3;
+  --color-primary-dark: #373539;
 }
 
 @layer components {
   .card {
-    @apply w-full h-fit py-12 bg-gray-700 text-white flex flex-col justify-center items-center rounded-2xl;
+    @apply w-full h-fit py-12 bg-accent dark:bg-gray-700 flex flex-col justify-center items-center rounded-2xl;
   }
   .TransactionCard {
     @apply w-full h-fit p-3 bg-gray-700 text-white flex justify-between items-center rounded-2xl;

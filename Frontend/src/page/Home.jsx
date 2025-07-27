@@ -79,7 +79,7 @@ export const Home = () => {
             <input
               type="number"
               value={input}
-              className="w-full h-fit p-3 bg-gray-700 text-white rounded-2xl"
+              className="w-full h-fit p-3 bg-accent dark:bg-gray-700 text-black dark:text-white rounded-2xl"
               placeholder="Type.."
               onChange={(e) => setInput(e.target.value)}
             />
