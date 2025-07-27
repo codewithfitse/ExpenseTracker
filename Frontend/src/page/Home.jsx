@@ -36,9 +36,9 @@ export const Home = () => {
 
   return (
     <>
-      <div className="w-full min-h-full flex flex-col items-center overflow-x-hidden bg-primary dark:bg-primary-dark dark">
+      <div className="w-full min-h-full flex flex-col items-center overflow-x-hidden bg-primary dark:bg-primary-dark text-primary-dark dark:text-primary dark">
         <header className="w-full h-[70px] flex justify-center items-center bg-gray-500">
-          <button className="w-fit h-fit p-2 rounded-2xl bg-primary dark:bg-primary-dark">
+          <button className="w-fit h-fit p-4 text-2xl rounded-2xl bg-primary dark:bg-primary-dark">
             D
           </button>
         </header>
