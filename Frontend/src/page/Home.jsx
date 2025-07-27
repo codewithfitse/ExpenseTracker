@@ -1,7 +1,7 @@
 import { useReducer, useState } from "react";
 
 export const Home = () => {
-  let [input, setInput] = useState();
+  let [input, setInput] = useState(0);
   //let count = 1000;
 
   function reducer(state, action) {
