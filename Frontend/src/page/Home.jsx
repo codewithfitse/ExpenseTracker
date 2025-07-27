@@ -33,36 +33,45 @@ export const Home = () => {
 
   return (
     <>
-      <div className="mt-10 flex justify-center">
-        <h1 className="text-white text-2xl">{state.count}</h1>
-        <button
-          className="p-3 rounded-2xl bg-amber-50 text-black"
-          onClick={() => dispatch({ type: "inc" })}
-        >
-          +500
-        </button>
-        <button
-          className="p-3 rounded-2xl bg-amber-50 text-black"
-          onClick={() => dispatch({ type: "dec" })}
-        >
-          -250
-        </button>
-
-        <form action="su" onSubmit={calculate}>
-          <input
-            type="Number"
-            value={input}
-            className="p-3 bg-amber-50 text-black rounded-2xl"
-            placeholder="Type.."
-            onChange={(e) => setInput(e.target.value)}
-          />
+      <div className="w-full min-h-full flex flex-col items-center overflow-x-hidden">
+        <header className="w-full h-[70px] bg-gray-500"></header>
+        <main className="w-full h-full">
+          <div className="card m-3">
+            <h1 className="text-2xl">${state.count}</h1>
+          </div>
+          <div className="flex">
+            <div className="card m-3"></div>
+            <div className="card m-3"></div>
+          </div>
           <button
-            type="submit"
             className="p-3 rounded-2xl bg-amber-50 text-black"
+            onClick={() => dispatch({ type: "inc" })}
           >
-            Done
+            +500
           </button>
-        </form>
+          <button
+            className="p-3 rounded-2xl bg-amber-50 text-black"
+            onClick={() => dispatch({ type: "dec" })}
+          >
+            -250
+          </button>
+
+          <form action="su" onSubmit={calculate}>
+            <input
+              type="Number"
+              value={input}
+              className="p-3 bg-amber-50 text-black rounded-2xl"
+              placeholder="Type.."
+              onChange={(e) => setInput(e.target.value)}
+            />
+            <button
+              type="submit"
+              className="p-3 rounded-2xl bg-amber-50 text-black"
+            >
+              Done
+            </button>
+          </form>
+        </main>
       </div>
     </>
   );

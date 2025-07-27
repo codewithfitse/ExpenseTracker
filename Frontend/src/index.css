@@ -1,11 +1,10 @@
 @import "tailwindcss";
 
-
-
 body {
   width: 100%;
   height: 100%;
-  background: #000;
+  background: #fff;
+  color: #000;
 }
 
 .landing {
@@ -17,35 +16,17 @@ body {
 }
 
 @layer components {
-  .chat {
-    @apply w-[80%] h-fit p-2 bg-gray-700 text-white flex justify-between;
+  .card {
+    @apply w-full h-fit py-15 bg-gray-700 text-white flex justify-center items-center rounded-2xl;
   }
 }
 
-.custom-shape-divider-bottom-1752948060 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
+@layer base {
+  h1 {
+    @apply text-[40px];
+  }
+  p {
+    @apply text-[15px] text-gray-700;
+  }
 }
 
-.custom-shape-divider-bottom-1752948060 svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 150px;
-}
-
-.custom-shape-divider-bottom-1752948060 .shape-fill {
-    fill: #08f223;
-}
-
-/** For mobile devices **/
-@media (max-width: 767px) {
-    .custom-shape-divider-bottom-1752948060 svg {
-        width: calc(158% + 1.3px);
-        height: 150px;
-    }
-}
