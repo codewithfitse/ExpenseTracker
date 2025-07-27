@@ -3,6 +3,7 @@ import { useReducer, useState } from "react";
 export const Home = () => {
   let [input, setInput] = useState(0);
   //let count = 1000;
+  let tran = [];
 
   function reducer(state, action) {
     switch (action.type) {
@@ -28,6 +29,13 @@ export const Home = () => {
     e.preventDefault();
 
     dispatch({ type: "calc", payload: input });
+
+    const newt = {
+      //id: Math.random(),
+      amount: +input,
+    };
+
+    tran.push(newt);
   }
   const [state, dispatch] = useReducer(reducer, { count: 1000 });
 
@@ -74,13 +82,16 @@ export const Home = () => {
 
           <h1 className="my-3">Recent Transaction</h1>
           <div className="">
-            <div
-              className="TransactionCard m-3 flex"
-              onClick={() => dispatch({ type: "dec" })}
-            >
-              <p className="">$Withdraw Balance</p>
-              <h1 className="">-250</h1>
-            </div>
+            {tran.map((item, index) => {
+              <div
+                key={index}
+                className="TransactionCard m-3 flex"
+                onClick={() => dispatch({ type: "dec" })}
+              >
+                <p className="">$Withdraw Balance</p>
+                <h1 className="">{item.amount}</h1>
+              </div>;
+            })}
           </div>
         </main>
       </div>
