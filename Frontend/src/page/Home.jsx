@@ -2,40 +2,35 @@ import { useReducer, useState } from "react";
 
 export const Home = () => {
   let [input, setInput] = useState("");
-  let [initail, setInitail] = useState(1000);
-
-  function add() {
-    setInitail(initail + 500);
-  }
-
-  function del() {
-    setInitail(initail - 250);
-  }
-
-  const [state, dispatch] = useReducer(reducer, initail);
+  //let count = 1000;
 
   function reducer(state, action) {
     if (action.type === "inc") {
       return {
-        initail: state.initail + 500;
-      }
+        count: state.count + 500,
+      };
+    } else if (action.type === "dec") {
+      return {
+        count: state.count - 250,
+      };
     }
-    setInitail(initail - 250);
   }
+
+  const [state, dispatch] = useReducer(reducer, { count: 1000 });
 
   return (
     <>
       <div className="mt-10 flex justify-center">
-        <h1 className="text-white text-2xl">{initail}</h1>
+        <h1 className="text-white text-2xl">{state.count}</h1>
         <button
           className="p-3 rounded-2xl bg-amber-50 text-black"
-          onClick={add}
+          onClick={() => dispatch({ type: "inc" })}
         >
           +500
         </button>
         <button
           className="p-3 rounded-2xl bg-amber-50 text-black"
-          onClick={del}
+          onClick={() => dispatch({ type: "dec" })}
         >
           -250
         </button>
@@ -48,7 +43,7 @@ export const Home = () => {
         />
         <button
           className="p-3 rounded-2xl bg-amber-50 text-black"
-          onClick={del}
+          onClick={() => dispatch({ type: "inc" })}
         >
           Done
         </button>
