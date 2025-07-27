@@ -1,7 +1,7 @@
 import { useReducer, useState } from "react";
 
 export const Home = () => {
-  let [input, setInput] = useState("");
+  let [input, setInput] = useState();
   //let count = 1000;
 
   function reducer(state, action) {
@@ -19,12 +19,16 @@ export const Home = () => {
       case "calc":
         return {
           ...state,
-          count: action.payload,
-          ...state.count,
+          count: state.count + Number(action.payload),
         };
     }
   }
 
+  function calculate(e) {
+    e.preventDefault();
+
+    dispatch({ type: "calc", payload: input });
+  }
   const [state, dispatch] = useReducer(reducer, { count: 1000 });
 
   return (
@@ -44,19 +48,21 @@ export const Home = () => {
           -250
         </button>
 
-        <input
-          type="text"
-          value={input}
-          className="p-3 bg-amber-50 text-black rounded-2xl"
-          placeholder="Type.."
-          onChange={(e) => setInput(e.target.value)}
-        />
-        <button
-          className="p-3 rounded-2xl bg-amber-50 text-black"
-          onClick={() => dispatch({ type: "calc", payload: state.count })}
-        >
-          Done
-        </button>
+        <form action="su" onSubmit={calculate}>
+          <input
+            type="Number"
+            value={input}
+            className="p-3 bg-amber-50 text-black rounded-2xl"
+            placeholder="Type.."
+            onChange={(e) => setInput(e.target.value)}
+          />
+          <button
+            type="submit"
+            className="p-3 rounded-2xl bg-amber-50 text-black"
+          >
+            Done
+          </button>
+        </form>
       </div>
     </>
   );
