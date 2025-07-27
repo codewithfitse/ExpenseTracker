@@ -37,7 +37,7 @@ export const Home = () => {
         <header className="w-full h-[70px] bg-gray-500"></header>
         <main className="w-full h-full">
           <div className="card m-3">
-            <p className="text-2xl">$Total Balance</p>
+            <p className="">$Total Balance</p>
             <h1 className="">${state.count}</h1>
           </div>
           <div className="flex">
@@ -71,6 +71,17 @@ export const Home = () => {
               Done
             </button>
           </form>
+
+          <h1 className="my-3">Recent Transaction</h1>
+          <div className="">
+            <div
+              className="card m-3 flex"
+              onClick={() => dispatch({ type: "dec" })}
+            >
+              <p className="">$Withdraw Balance</p>
+              <h1 className="">-250</h1>
+            </div>
+          </div>
         </main>
       </div>
     </>

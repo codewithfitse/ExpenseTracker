@@ -3,8 +3,6 @@
 body {
   width: 100%;
   height: 100%;
-  margin: 0;
-  padding: 0;
   background: #fff;
   color: #000;
 }
@@ -25,13 +23,13 @@ body {
 
 @layer base {
   h1 {
-    @apply text-[40px] font-semibold;
+    @apply text-[30px] lg:text-[40px] font-semibold;
   }
   h2 {
-    @apply !text-[32px] font-semibold;
+    @apply text-[22px] lg:text-[32px] font-semibold;
   }
   p {
-    @apply !text-[20px] py-2 text-gray-500 ;
+    @apply text-[15px] lg:text-[20px] py-2 text-gray-500 ;
   }
 }
 
