@@ -75,7 +75,7 @@ export const Home = () => {
           <h1 className="my-3">Recent Transaction</h1>
           <div className="">
             <div
-              className="card m-3 flex"
+              className="TransactionCard m-3 flex"
               onClick={() => dispatch({ type: "dec" })}
             >
               <p className="">$Withdraw Balance</p>
