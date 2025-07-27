@@ -37,6 +37,7 @@ export const Home = () => {
         <header className="w-full h-[70px] bg-gray-500"></header>
         <main className="w-full h-full">
           <div className="card m-3">
+            <p className="text-2xl">$Total Balance</p>
             <h1 className="text-2xl">${state.count}</h1>
           </div>
           <div className="flex">

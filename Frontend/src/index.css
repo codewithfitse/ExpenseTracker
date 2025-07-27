@@ -17,16 +17,19 @@ body {
 
 @layer components {
   .card {
-    @apply w-full h-fit py-15 bg-gray-700 text-white flex justify-center items-center rounded-2xl;
+    @apply w-full h-fit py-12 bg-gray-700 text-white flex flex-col justify-center items-center rounded-2xl;
   }
 }
 
 @layer base {
   h1 {
-    @apply text-[40px];
+    @apply !text-[40px] font-semibold;
+  }
+  h2 {
+    @apply !text-[32px] font-semibold;
   }
   p {
-    @apply text-[15px] text-gray-700;
+    @apply !text-[20px] text-gray-500 ;
   }
 }
 
