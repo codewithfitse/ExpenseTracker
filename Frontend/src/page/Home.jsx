@@ -46,7 +46,7 @@ export const Home = () => {
           isDark ? "dark" : ""
         }`}
       >
-        <header className="w-full h-[70px] px-3 flex justify-between items-center bg-gray-500">
+        <header className="w-full h-[70px] px-3 flex justify-between items-center bg-gray-300 dark:bg-gray-500">
           <h2 className="">Expense Tracker</h2>
           <button
             className="w-fit h-fit p-3 text-2xl rounded-2xl bg-primary dark:bg-primary-dark"
