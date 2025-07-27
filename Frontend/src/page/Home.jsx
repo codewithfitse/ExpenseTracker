@@ -38,37 +38,36 @@ export const Home = () => {
         <main className="w-full h-full">
           <div className="card m-3">
             <p className="text-2xl">$Total Balance</p>
-            <h1 className="text-2xl">${state.count}</h1>
+            <h1 className="">${state.count}</h1>
           </div>
           <div className="flex">
-            <div className="card m-3"></div>
-            <div className="card m-3"></div>
-          </div>
-          <button
-            className="p-3 rounded-2xl bg-amber-50 text-black"
-            onClick={() => dispatch({ type: "inc" })}
-          >
-            +500
-          </button>
-          <button
-            className="p-3 rounded-2xl bg-amber-50 text-black"
-            onClick={() => dispatch({ type: "dec" })}
-          >
-            -250
-          </button>
+            <div className="card m-3" onClick={() => dispatch({ type: "inc" })}>
+              <p className="">$Deposit Balance</p>
 
-          <form action="su" onSubmit={calculate}>
+              <h1 className="">+500</h1>
+            </div>
+            <div className="card m-3" onClick={() => dispatch({ type: "dec" })}>
+              <p className="">$Withdraw Balance</p>
+              <h1 className="">-250</h1>
+            </div>
+          </div>
+
+          <form
+            action=""
+            onSubmit={calculate}
+            className="py-2 px-5 flex items-center space-x-3"
+          >
+            <label htmlFor="" className="text-2xl">
+              Amount
+            </label>
             <input
               type="Number"
               value={input}
-              className="p-3 bg-amber-50 text-black rounded-2xl"
+              className="w-full h-fit p-3 bg-gray-700 text-white rounded-2xl"
               placeholder="Type.."
               onChange={(e) => setInput(e.target.value)}
             />
-            <button
-              type="submit"
-              className="p-3 rounded-2xl bg-amber-50 text-black"
-            >
+            <button type="submit" className="p-3 rounded-2xl bg-gray-700">
               Done
             </button>
           </form>
