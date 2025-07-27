@@ -16,6 +16,12 @@ export const Home = () => {
           ...state,
           count: state.count - 250,
         };
+      case "calc":
+        return {
+          ...state,
+          count: action.payload,
+          ...state.count,
+        };
     }
   }
 
@@ -47,7 +53,7 @@ export const Home = () => {
         />
         <button
           className="p-3 rounded-2xl bg-amber-50 text-black"
-          onClick={() => dispatch({ type: "calc" })}
+          onClick={() => dispatch({ type: "calc", payload: state.count })}
         >
           Done
         </button>
