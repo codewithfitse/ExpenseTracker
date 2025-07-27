@@ -86,7 +86,7 @@ export const Home = () => {
                 }`}
               >
                 <p className="text-lg font-medium">{item.label}</p>
-                <h1 className="text-xl font-bold">{item.amount}</h1>
+                <h1 className="text-xl font-bold">${item.amount}</h1>
               </div>
             ))}
           </div>
