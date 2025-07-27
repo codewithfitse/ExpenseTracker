@@ -3,7 +3,7 @@ import { useReducer, useState } from "react";
 export const Home = () => {
   let [input, setInput] = useState(0);
   //let count = 1000;
-  let [tran, setTran] = useState([]);
+  let [transactions, setTransactions] = useState([]);
 
   function reducer(state, action) {
     switch (action.type) {
@@ -35,7 +35,7 @@ export const Home = () => {
       label: +input > 0 ? "Custom Deposit" : "Custom Withdrawal",
     };
 
-    setTran([...tran, newTransaction]);
+    setTransactions((prev) => [...prev, newTransaction]);
   }
   const [state, dispatch] = useReducer(reducer, { count: 1000 });
 
@@ -80,15 +80,12 @@ export const Home = () => {
             </button>
           </form>
 
-          <h1 className="my-3">Recent Transaction</h1>
+          <h1 className="my-3">Recent transactions</h1>
           <div className="">
-            {tran.map((item, index) => {
-              <div
-                key={index}
-                className="TransactionCard m-3 flex"
-                onClick={() => dispatch({ type: "dec" })}
-              >
+            {transactions.map((item, index) => {
+              <div key={index} className="TransactionCard m-3 flex">
                 <p className="">$Withdraw Balance</p>
+                <h1 className="">{item.label}</h1>
                 <h1 className="">{item.amount}</h1>
               </div>;
             })}
