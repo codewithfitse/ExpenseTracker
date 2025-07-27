@@ -1,32 +1,27 @@
 import { useReducer, useState } from "react";
 
 export const Home = () => {
-  let [input, setInput] = useState(0);
-  //let count = 1000;
-  let [transactions, setTransactions] = useState([]);
+  const [input, setInput] = useState(0);
+  const [transactions, setTransactions] = useState([]);
+
+  const [state, dispatch] = useReducer(reducer, { count: 1000 });
 
   function reducer(state, action) {
     switch (action.type) {
       case "inc":
-        return {
-          ...state,
-          count: state.count + 500,
-        };
+        return { ...state, count: state.count + 500 };
       case "dec":
-        return {
-          ...state,
-          count: state.count - 250,
-        };
+        return { ...state, count: state.count - 250 };
       case "calc":
-        return {
-          ...state,
-          count: state.count + Number(action.payload),
-        };
+        return { ...state, count: state.count + Number(action.payload) };
+      default:
+        return state;
     }
   }
 
   function calculate(e) {
     e.preventDefault();
+    if (isNaN(input) || input === 0) return;
 
     dispatch({ type: "calc", payload: input });
 
@@ -36,8 +31,8 @@ export const Home = () => {
     };
 
     setTransactions((prev) => [...prev, newTransaction]);
+    setInput("");
   }
-  const [state, dispatch] = useReducer(reducer, { count: 1000 });
 
   return (
     <>
@@ -50,45 +45,50 @@ export const Home = () => {
           </div>
           <div className="flex">
             <div className="card m-3" onClick={() => dispatch({ type: "inc" })}>
-              <p className="">$Deposit Balance</p>
-
-              <h1 className="">+500</h1>
+              <p>$Deposit Balance</p>
+              <h1>+500</h1>
             </div>
             <div className="card m-3" onClick={() => dispatch({ type: "dec" })}>
-              <p className="">$Withdraw Balance</p>
-              <h1 className="">-250</h1>
+              <p>$Withdraw Balance</p>
+              <h1>-250</h1>
             </div>
           </div>
 
           <form
-            action=""
             onSubmit={calculate}
             className="py-2 px-5 flex items-center space-x-3"
           >
-            <label htmlFor="" className="text-2xl">
-              Amount
-            </label>
+            <label className="text-2xl">Amount</label>
             <input
-              type="Number"
+              type="number"
               value={input}
               className="w-full h-fit p-3 bg-gray-700 text-white rounded-2xl"
               placeholder="Type.."
               onChange={(e) => setInput(e.target.value)}
             />
-            <button type="submit" className="p-3 rounded-2xl bg-gray-700">
+            <button
+              type="submit"
+              className="p-3 rounded-2xl bg-gray-700 text-white"
+            >
               Done
             </button>
           </form>
 
-          <h1 className="my-3">Recent transactions</h1>
-          <div className="">
-            {transactions.map((item, index) => {
-              <div key={index} className="TransactionCard m-3 flex">
-                <p className="">$Withdraw Balance</p>
-                <h1 className="">{item.label}</h1>
-                <h1 className="">{item.amount}</h1>
-              </div>;
-            })}
+          <h1 className="my-3 text-xl">Recent Transactions</h1>
+          <div>
+            {transactions.map((item, index) => (
+              <div
+                key={index}
+                className={`m-3 flex justify-between items-center p-4 rounded-xl shadow cursor-pointer transition ${
+                  item.amount < 0
+                    ? "bg-red-100 text-red-800"
+                    : "bg-green-100 text-green-800"
+                }`}
+              >
+                <p className="text-lg font-medium">{item.label}</p>
+                <h1 className="text-xl font-bold">{item.amount}</h1>
+              </div>
+            ))}
           </div>
         </main>
       </div>
