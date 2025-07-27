@@ -3,7 +3,7 @@ import { useReducer, useState } from "react";
 export const Home = () => {
   let [input, setInput] = useState(0);
   //let count = 1000;
-  let tran = [];
+  let [tran, setTran] = useState([]);
 
   function reducer(state, action) {
     switch (action.type) {
@@ -30,12 +30,12 @@ export const Home = () => {
 
     dispatch({ type: "calc", payload: input });
 
-    const newt = {
-      //id: Math.random(),
+    const newTransaction = {
       amount: +input,
+      label: +input > 0 ? "Custom Deposit" : "Custom Withdrawal",
     };
 
-    tran.push(newt);
+    setTran([...tran, newTransaction]);
   }
   const [state, dispatch] = useReducer(reducer, { count: 1000 });
 
