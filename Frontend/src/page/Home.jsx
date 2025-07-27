@@ -5,14 +5,17 @@ export const Home = () => {
   //let count = 1000;
 
   function reducer(state, action) {
-    if (action.type === "inc") {
-      return {
-        count: state.count + 500,
-      };
-    } else if (action.type === "dec") {
-      return {
-        count: state.count - 250,
-      };
+    switch (action.type) {
+      case "inc":
+        return {
+          ...state,
+          count: state.count + 500,
+        };
+      case "dec":
+        return {
+          ...state,
+          count: state.count - 250,
+        };
     }
   }
 
@@ -37,13 +40,14 @@ export const Home = () => {
 
         <input
           type="text"
+          value={input}
           className="p-3 bg-amber-50 text-black rounded-2xl"
           placeholder="Type.."
           onChange={(e) => setInput(e.target.value)}
         />
         <button
           className="p-3 rounded-2xl bg-amber-50 text-black"
-          onClick={() => dispatch({ type: "inc" })}
+          onClick={() => dispatch({ type: "calc" })}
         >
           Done
         </button>
