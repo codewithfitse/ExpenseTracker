@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useReducer, useState } from "react";
 
 export const Home = () => {
   let [input, setInput] = useState("");
@@ -11,6 +11,8 @@ export const Home = () => {
   function del() {
     setInitail(initail - 250);
   }
+
+  const [state, dispatch] = useReducer(reducer, initail);
 
   return (
     <>
