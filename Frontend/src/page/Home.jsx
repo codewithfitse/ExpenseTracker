@@ -52,7 +52,11 @@ export const Home = () => {
             className="w-fit h-fit p-3 text-2xl rounded-2xl bg-primary dark:bg-primary-dark"
             onClick={toogle}
           >
-            {isDark ? "L" : "D"}
+            {isDark ? (
+              <i className="fa fa-sun-o !text-[36px] !text-accent"></i>
+            ) : (
+              <i className="fa fa-moon-o !text-[36px] text-primary-dark"></i>
+            )}
           </button>
         </header>
         <main className="w-full h-full">
