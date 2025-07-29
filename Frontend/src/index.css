@@ -11,7 +11,7 @@ body {
 .landing {
   width: auto;
   height: auto;
-  background-image: url("Expense.jpg");
+  background-image: url("/public/Expense.jpg");
   background-position: center;
   background-size: cover;
 }

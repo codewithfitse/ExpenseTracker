@@ -5,7 +5,7 @@ export const Landing = () => {
   const navigate = useNavigate();
   setTimeout(() => {
     navigate("/Home");
-  }, 2000);
+  }, 4000);
 
   return (
     <>
