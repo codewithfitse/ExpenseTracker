@@ -1,7 +1,3 @@
-Here's a complete, professional `README.md` tailored for your [**ExpenseTracker**](https://github.com/codewithfitse/ExpenseTracker) project:
-
----
-
 # 💸 Expense Tracker
 
 A lightweight, modern web application to track your income and expenses. Built using React and the Context API, this app helps you take control of your finances with an intuitive interface and persistent storage.
@@ -10,8 +6,8 @@ A lightweight, modern web application to track your income and expenses. Built u
 
 ## 📸 Demo
 
-**Live App**: [https://your-live-url.vercel.app](https://expense-tracker-rose-omega.vercel.app)
-*(Replace this with your actual deployed link)*
+**Live App**: [Click Here to see...](https://expense-tracker-rose-omega.vercel.app)
+
 
 ---
 
